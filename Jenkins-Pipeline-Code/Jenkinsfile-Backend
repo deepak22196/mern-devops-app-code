@@ -81,7 +81,9 @@ pipeline {
         }
         stage('Checkout Code') {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
+                
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
+
             }
         }
         stage('Update Deployment file') {
