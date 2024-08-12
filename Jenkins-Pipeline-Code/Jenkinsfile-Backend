@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
             }
         }
         stage('Sonarqube Analysis') {
@@ -26,8 +26,8 @@ pipeline {
                 dir('app/backend') {
                     withSonarQubeEnv('sonar-server') {
                         sh ''' $SCANNER_HOME/bin/sonar-scanner \
-                        -Dsonar.projectName=three-tier-backend \
-                        -Dsonar.projectKey=three-tier-backend '''
+                        -Dsonar.projectName=backend \
+                        -Dsonar.projectKey=backend '''
                     }
                 }
             }
