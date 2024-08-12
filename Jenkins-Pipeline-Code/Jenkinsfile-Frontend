@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', credentialsId: 'GITHUB', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'
             }
         }
         stage('Sonarqube Analysis') {
@@ -81,7 +81,7 @@ pipeline {
         }
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'GITHUB', url: 'https://github.com/deepak22196/mern-devops-app-code.git'            }
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/deepak22196/mern-devops-app-code.git'            }
         }
         stage('Update Deployment file') {
             environment {
