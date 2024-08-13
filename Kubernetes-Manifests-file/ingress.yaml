@@ -14,13 +14,13 @@ spec:
     - host: deepakdevops.com
       http:
         paths:
-          # - path: /api
-          #   pathType: Prefix
-          #   backend:
-          #     service:
-          #       name: api
-          #       port:
-          #         number: 3500
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api
+                port:
+                  number: 3500
           - path: /healthz
             pathType: Exact
             backend:
